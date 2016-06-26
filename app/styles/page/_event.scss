@@ -1,0 +1,42 @@
+.page-event {
+    background: url('../images/global/bg-product.png') left top no-repeat;
+    width: 100%;
+    max-width: 1640px;
+    height: 345px;
+    .row {
+        background-color: #fff;
+    }
+    .events {
+        .events__list {
+            margin-bottom: 30px;
+        }
+    }
+    .event__item--big {
+        margin-top: 100px;
+        .event__img {
+            text-align: center;
+            img {
+                max-width: 554px;
+                margin: 0 auto;
+            }
+        }
+        .title {
+            font-size: 24px;
+        }
+    }
+    .event__info {
+        padding: 0 0.625rem;
+        .title {
+            font-size: 18px;
+            font-weight: normal;
+            line-height: normal;
+        }
+    }
+    .event__description {
+        font-size: 14px;
+        margin: 10px 0;
+        ul {
+            padding-left: 20px;
+        }
+    }
+}

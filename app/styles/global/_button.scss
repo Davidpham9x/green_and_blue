@@ -1,0 +1,27 @@
+/*
+** BUTTONS
+** Please use btn- as your CSS class prefix
+*/
+.button {
+    border: none;
+    display: inline-block;
+    text-decoration: none;
+    color: #fff;
+    font-size: 14px;
+    font-weight: bold;
+    line-height: 37px;
+    text-transform: uppercase;
+    background-color: #86bc42;
+    padding: 0 25px;
+    @include border-radius( 3px, 3px, 3px, 3px );
+    &:hover {
+    	background-color: lighten( #86bc42, 10% );
+    }
+}
+.button--full {
+	display: block;
+	text-align: center;
+}
+.button__wrapper {
+	text-align: right;
+}
