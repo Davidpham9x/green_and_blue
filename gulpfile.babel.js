@@ -1,4 +1,4 @@
-// generated on 2016-06-24 using generator-webapp 2.0.0
+// generated on 2016-05-20 using generator-webapp 2.0.0
 import gulp from 'gulp';
 import gulpLoadPlugins from 'gulp-load-plugins';
 import browserSync from 'browser-sync';
@@ -52,11 +52,11 @@ gulp.task('lint', lint('app/scripts/**/*.js'));
 gulp.task('lint:test', lint('test/spec/**/*.js', testLintOptions));
 
 gulp.task('html', ['styles', 'scripts'], () => {
-    return gulp.src('app/*.html')
+    return gulp.src('.tmp/*.html')
         .pipe($.useref({ searchPath: ['.tmp', 'app', '.'] }))
         .pipe($.if('*.js', $.uglify()))
         .pipe($.if('*.css', $.cssnano()))
-        .pipe($.if('*.html', $.htmlmin({ collapseWhitespace: true })))
+        // .pipe($.if('*.html', $.htmlmin({collapseWhitespace: true})))
         .pipe(gulp.dest('dist'));
 });
 
@@ -110,12 +110,12 @@ gulp.task('serve', ['html-include', 'styles', 'scripts', 'fonts'], () => {
     });
 
     gulp.watch([
-        'app/*.html',
+        'app/**/*.html',
         'app/images/**/*',
         '.tmp/fonts/**/*'
     ]).on('change', reload);
 
-    gulp.watch(['app/**/*.html', 'app/partials/*.html'], ['html-include']);
+    gulp.watch('app/**/*.html', ['html-include']);
     gulp.watch('app/styles/**/*.scss', ['styles']);
     gulp.watch('app/scripts/**/*.js', ['scripts']);
     gulp.watch('app/fonts/**/*', ['fonts']);
@@ -170,6 +170,6 @@ gulp.task('build', ['html-include', 'html', 'images', 'fonts', 'extras'], () => 
     return gulp.src('dist/**/*').pipe($.size({ title: 'build', gzip: true }));
 });
 
-gulp.task('default', ['clean'], () => {
+gulp.task('default', () => {
     gulp.start('build');
 });

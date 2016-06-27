@@ -1,0 +1,357 @@
+.page-home {
+	.masthead__banner {
+		figcaption {
+			&:before {
+				content: '';
+				background: url( '../images/global/figcaption-leaf.png' ) no-repeat;
+				width: 106px;
+				height: 57px;
+				@include ab( -5%, -8%, n, n );
+			}
+		}
+	}
+}
+
+/* Masthead */
+.masthead {
+	position: relative;
+}
+.masthead__banner {
+	figcaption {
+		.text {
+			color: #fff;
+			font-size: 41px;
+			font-weight: bold;
+			text-align: center;
+			line-height: 1.2em;
+			display: block;
+		}
+		.text--big {
+			font-size: 82px;
+		}
+	}
+}
+.masthead__arrow {
+	width: 100%;
+	height: 100%;
+	@include ab( 0, 0, n, n );
+	.slick-arrow {
+		top: 50%;
+		margin-top: -30px;
+		position: absolute;
+		background: none;
+		border: 0;
+		color: #fff;
+		text-align: center;
+		cursor: pointer;
+		width: 60px;
+		height: 60px;
+		border: 4px solid #fff;
+		@include border-radius( 50%, 50%, 50%, 50% );
+		&.slick-next {
+			right: 0;
+
+			.fa {
+				top: 3px;
+				right: -3px;
+				position: relative;
+			}
+		}
+		&.slick-prev {
+			left: 0;
+
+			.fa {
+				top: 3px;
+				left: -3px;
+				position: relative;
+			}
+		}
+	}
+}
+
+/* Figure */
+figure {
+	margin: 0;
+	padding: 0;
+
+	img {
+		width: 100%;
+	}
+}
+/* Figcaption */
+figcaption {
+	width: 100%;
+	@include ab( 50%, 50%, n, n );
+	@include transform( translate( -50%, -50% ) );
+}
+
+/* Support */
+.support {
+	top: -25px;
+	position: relative;
+
+	.row {
+		padding: 6px;
+		background-color: #fff;
+	}
+	.title {
+		font-size: 16px;
+		color: #6a6060;
+		display: block;
+		line-height: normal;
+	}
+}
+.support__order-now {
+	background-color: #86bc42;
+	&:hover {
+		background-color: lighten( #86bc42, 10% );
+	}
+
+	a {
+		display: block;
+		color: #fff;
+		font-size: 23px;
+		font-weight: bold;
+		text-align: center;
+		line-height: normal;
+		text-transform: uppercase;
+		padding: 45px 5px;
+	}
+}
+.support__call {
+	display: table;
+	position: relative;
+	&:before {
+		content: '';
+		width: 1px;
+		height: 70%;
+		background-color: #d2cfcf;
+		margin-top: -15%;
+		@include ab( 50%, n, n, 0 );
+	}
+
+	.inner {
+		height: 100%;
+		display: table-cell;
+		vertical-align: middle;
+	}
+	a {
+		color: #6a6060;
+		font-size: 30px;
+		font-weight: bold;
+		position: relative;
+		line-height: normal;
+		&:before {
+			content: '\f095';
+			font-family: 'FontAwesome';
+			width: 30px;
+			height: 30px;
+			line-height: 30px;
+			background-color: #6a6060;
+			color: #fff;
+			font-size: 20px;
+			text-align: center;
+			margin-top: -15px;
+			@include ab( 50%, -35px, n, n );
+			@include border-radius( 50%, 50%, 50%, 50% );
+		}
+	}
+}
+.support__chat {
+	display: table;
+
+	.inner {
+		height: 100%;
+		display: table-cell;
+		vertical-align: middle;
+	}
+	a {
+		color: #6a6060;
+		font-size: 26px;
+		position: relative;
+		line-height: normal;
+		&:before {
+			content: '\f17e';
+			font-family: 'FontAwesome';
+			width: 30px;
+			height: 30px;
+			line-height: 30px;
+			background-color: #6a6060;
+			color: #fff;
+			font-size: 20px;
+			text-align: center;
+			margin-top: -15px;
+			@include ab( 50%, -35px, n, n );
+			@include border-radius( 50%, 50%, 50%, 50% );
+		}
+	}
+}
+
+/* Products - Events */
+.products {
+	.heading__wrapper {
+		margin-bottom: 30px;
+	}
+}
+/* .products__list {} */
+.product__item, .event__item {
+	.inner {
+		background-color: #fff;
+		border: 1px solid transparent;
+		@include box-shadow( 0px, 0px, 21px, rgba(0, 0, 0, 0.14) );
+		&:hover {
+			border: 1px solid #9eca00;
+		}
+	}
+}
+.product__img, .event__img {
+	img {
+		width: 100%;
+	}
+}
+.product__info, .event__info {
+	padding: 15px;
+
+	span {
+		display: block;
+		color: #6a6060;
+		font-size: 29px;
+		font-weight: bold;
+		line-height: 1.2em;
+	}
+}
+/* .product__name {} */
+.product__description, .event__description {
+	color: #6a6060;
+	font-size: 16px;
+	line-height: normal;
+	display: block;
+	margin: 5px 0 15px;
+}
+/* .product__prize {} */
+
+/* Intro Green & Blue Company */
+.introGB {
+	margin-top: 30px;
+
+	figure {
+		text-align: center;
+		position: relative;
+
+		.heading {
+			margin-bottom: 30px;
+			text-shadow: 0px 1px 16px rgba(58, 65, 7, 1);
+		}
+		.description {
+			color: #fff;
+			font-size: 18px;
+			line-height: normal;
+			margin: 0;
+			text-shadow: 0px 1px 16px rgba(58, 65, 7, 1);
+		}
+	}
+	.heading__wrapper {
+		margin: 30px 0 0;
+	}
+	.quote-text {
+		color: #6a6060;
+		font-size: 14px;
+		line-height: normal;
+		text-align: justify;
+		margin: 0;
+		padding: 35px 45px;
+		background: url('../images/icons/icon-quote-text-left.png') no-repeat, url('../images/icons/icon-quote-text-right.png') no-repeat;
+		background-position: left top, right bottom;
+
+		a {
+			display: block;
+			float: right;
+			color: #9eca00;
+			font-size: 12px;
+			&:hover {
+				text-decoration: underline;
+			}
+		}
+	}
+}
+
+/* Recommendation */
+.recommendation {
+	background: url('../images/home/bg-recommendation.jpg') center center no-repeat;
+	background-size: cover;
+	width: 100%;
+	max-width: 1640px;
+	height: 356px;
+	margin-top: 30px;
+	display: table;
+
+	.inner {
+		height: 100%;
+		display: table-cell;
+		vertical-align: middle;
+	}
+	.heading__wrapper {
+		margin-bottom: 30px;
+	}
+}
+.recommendation__img {
+	width: 30%;
+	float: left;
+	text-align: center;
+
+	img {
+		width: 100%;
+		margin: 0 auto;
+		max-width: 106px;
+	}
+}
+.recommendation__info {
+	width: 70%;
+	float: left;
+	padding-left: 20px;
+}
+.recommendation__name {
+	color: #fff;
+	font-size: 17px;
+	font-weight: bold;
+	text-transform: uppercase;
+	display: block;
+	line-height: normal;
+}
+.recommendation__description {
+	color: #fff;
+	font-size: 14px;
+	line-height: normal;
+	margin: 20px 0 0;
+}
+
+/* Order Now */
+.order-now {
+	background: url('../images/home/bg-order-now.jpg') center center no-repeat;
+	background-size: cover;
+	width: 100%;
+	max-width: 1640px;
+	height: 369px;
+	display: table;
+
+	.inner {
+		height: 100%;
+		display: table-cell;
+		vertical-align: middle;
+		text-align: center;
+	}
+	.heading {
+		margin-bottom: 30px;
+	}
+}
+
+/* Form */
+.form {
+
+}
+.form__field {
+	margin-top: 15px;
+	&:first-child {
+		margin-top: 0;
+	}
+}

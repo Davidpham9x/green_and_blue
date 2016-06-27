@@ -1,0 +1,18 @@
+.page-product {
+    background: url('../images/global/bg-product.png') left top no-repeat;
+    width: 100%;
+    max-width: 1640px;
+    height: 345px;
+
+    .row {
+        background-color: #fff;
+    }
+    .heading__wrapper {
+        margin-top: 80px;
+    }
+    .products {
+        .products__list {
+            margin-bottom: 30px;
+        }
+    }
+}
