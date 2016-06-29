@@ -1,7 +1,9 @@
 .page-event {
-    background: url('../images/global/bg-product.png') left top no-repeat;
+    background: url('../images/global/bg-product.png') center top no-repeat;
+    background-size: cover;
     width: 100%;
-    max-width: 1640px;
+    /* max-width: 1640px; */
+    /* margin: 0 auto; */
     height: 345px;
     .row {
         background-color: #fff;
@@ -35,8 +37,5 @@
     .event__description {
         font-size: 14px;
         margin: 10px 0;
-        ul {
-            padding-left: 20px;
-        }
     }
 }

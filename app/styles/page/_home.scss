@@ -12,79 +12,6 @@
 	}
 }
 
-/* Masthead */
-.masthead {
-	position: relative;
-}
-.masthead__banner {
-	figcaption {
-		.text {
-			color: #fff;
-			font-size: 41px;
-			font-weight: bold;
-			text-align: center;
-			line-height: 1.2em;
-			display: block;
-		}
-		.text--big {
-			font-size: 82px;
-		}
-	}
-}
-.masthead__arrow {
-	width: 100%;
-	height: 100%;
-	@include ab( 0, 0, n, n );
-	.slick-arrow {
-		top: 50%;
-		margin-top: -30px;
-		position: absolute;
-		background: none;
-		border: 0;
-		color: #fff;
-		text-align: center;
-		cursor: pointer;
-		width: 60px;
-		height: 60px;
-		border: 4px solid #fff;
-		@include border-radius( 50%, 50%, 50%, 50% );
-		&.slick-next {
-			right: 0;
-
-			.fa {
-				top: 3px;
-				right: -3px;
-				position: relative;
-			}
-		}
-		&.slick-prev {
-			left: 0;
-
-			.fa {
-				top: 3px;
-				left: -3px;
-				position: relative;
-			}
-		}
-	}
-}
-
-/* Figure */
-figure {
-	margin: 0;
-	padding: 0;
-
-	img {
-		width: 100%;
-	}
-}
-/* Figcaption */
-figcaption {
-	width: 100%;
-	@include ab( 50%, 50%, n, n );
-	@include transform( translate( -50%, -50% ) );
-}
-
 /* Support */
 .support {
 	top: -25px;
@@ -187,49 +114,6 @@ figcaption {
 	}
 }
 
-/* Products - Events */
-.products {
-	.heading__wrapper {
-		margin-bottom: 30px;
-	}
-}
-/* .products__list {} */
-.product__item, .event__item {
-	.inner {
-		background-color: #fff;
-		border: 1px solid transparent;
-		@include box-shadow( 0px, 0px, 21px, rgba(0, 0, 0, 0.14) );
-		&:hover {
-			border: 1px solid #9eca00;
-		}
-	}
-}
-.product__img, .event__img {
-	img {
-		width: 100%;
-	}
-}
-.product__info, .event__info {
-	padding: 15px;
-
-	span {
-		display: block;
-		color: #6a6060;
-		font-size: 29px;
-		font-weight: bold;
-		line-height: 1.2em;
-	}
-}
-/* .product__name {} */
-.product__description, .event__description {
-	color: #6a6060;
-	font-size: 16px;
-	line-height: normal;
-	display: block;
-	margin: 5px 0 15px;
-}
-/* .product__prize {} */
-
 /* Intro Green & Blue Company */
 .introGB {
 	margin-top: 30px;
@@ -280,7 +164,8 @@ figcaption {
 	background: url('../images/home/bg-recommendation.jpg') center center no-repeat;
 	background-size: cover;
 	width: 100%;
-	max-width: 1640px;
+	/* max-width: 1640px;
+	margin: 0 auto; */
 	height: 356px;
 	margin-top: 30px;
 	display: table;
@@ -327,10 +212,11 @@ figcaption {
 
 /* Order Now */
 .order-now {
-	background: url('../images/home/bg-order-now.jpg') center center no-repeat;
+	background: url('../images/home/bg-order-now.jpg') center top no-repeat;
 	background-size: cover;
 	width: 100%;
-	max-width: 1640px;
+	/* max-width: 1640px;
+	margin: 0 auto; */
 	height: 369px;
 	display: table;
 
