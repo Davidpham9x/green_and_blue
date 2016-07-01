@@ -3,13 +3,9 @@
   "private": true,
   "dependencies": {
     "jquery": "~2.1.1",
-<<<<<<< HEAD
-    "normalize-css": "^4.1.1"
-=======
     "slick-carousel": "^1.6.0",
     "jquery-placeholder": "^2.3.1",
     "what-input": "^3.0.0"
->>>>>>> 65b2b2c2dfac5bcdda3fb183145703f8250aeee6
   },
   "devDependencies": {
     "chai": "^3.5.0",

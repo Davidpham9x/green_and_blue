@@ -30,6 +30,7 @@ var isMobile = {
             $.support.cors = true;
             this.initFormElements();
             this.initMasheadSlider();
+            this.initSliderProduct();
         },
 
         initFormElements: function() {
@@ -96,6 +97,31 @@ var isMobile = {
                 });
             }
         },
+
+        initSliderProduct: function () {
+            if ( $('#slider-product').length ) {
+                var sliderContent = $('#slider-product > .product__img--big'),
+                    listThumbs = $('#slider-product').find('.product__img--list').children();
+
+                sliderContent.slick({
+                    infinite: true,
+                    speed: 500,
+                    fade: true,
+                    arrows: false,
+                    cssEase: 'linear'
+                });
+
+                listThumbs.each(function ( idx, elm ) {
+                    var _this = $(this);
+
+                        _this.off('click').on('click', function () {
+                            sliderContent.slick( 'slickGoTo', idx );
+                            listThumbs.removeClass('active');
+                            listThumbs.eq( idx ).addClass('active');
+                        });
+                })
+            }
+        }
     };
 })(jQuery);
 

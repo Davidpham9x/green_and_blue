@@ -1,0 +1,87 @@
+.page-order {
+    background: url('../images/global/bg-product.png') center top no-repeat;
+    background-size: cover;
+    width: 100%;
+    height: 345px;
+
+    .row {
+        background-color: #fff;
+    }
+    .heading__wrapper {
+        margin-bottom: 40px;
+    }
+    /* Step Order */
+    .step-order {
+        margin-top: 80px;
+
+        .list-step {
+            margin-bottom: 45px;
+            .inner {
+                margin: 0 auto;
+                max-width: 250px;
+            }
+            .wrap-info {
+                .title {
+                    color: #6a6060;
+                    font-size: 14px;
+                    font-weight: bold;
+                    font-family: $font-utm;
+                    line-height: normal;
+                }
+                .desc {
+                    color: #6a6060;
+                    font-size: 14px;
+                    font-family: $font-utm;
+                    line-height: normal;
+                    margin: 0;
+                }
+            }
+        }
+    }
+    .wrap-img {
+        text-align: center;
+        position: relative;
+
+        .number {
+            color: #8bc53e;
+            font-size: 43px;
+            font-weight: bold;
+            font-family: $font-utm;
+            line-height: normal;
+            @include ab( n, 0, 0, n );
+        }
+    }
+    /* Support */
+    .form-order {
+        margin-bottom: 45px;
+    }
+}
+/* Service */
+.service {
+    margin-bottom: 45px;
+    .list-service {
+        .item {
+            width: 20%;
+            float: left;
+            padding: 0 10px;
+            &:first-child {
+                .inner {
+                    span {
+                        margin-top: 26px;
+                    }
+                }
+            }
+        }
+        .inner {
+            text-align: center;
+
+            span {
+                display: block;
+                text-transform: uppercase;
+                font-size: 18px;
+                margin-top: 8px;
+                line-height: normal;
+            }
+        }
+    }
+}

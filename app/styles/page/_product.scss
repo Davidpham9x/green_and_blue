@@ -25,23 +25,36 @@
         margin-top: 100px;
         .product__img {
             text-align: center;
-            img {
+            /* img {
                 max-width: 554px;
                 margin: 0 auto;
-            }
+            } */
         }
         .product__img--big {
             background-color: #fff;
-            @include box-shadow( 0px, 0px, 21px, rgba(0, 0, 0, 0.9));
+            @include box-shadow( 0, 0, 21px, rgba( 0, 0, 0, 0.09 ));
         }
         .product__img--list {
             margin: 20px -5px 0;
+        }
+        .product__img--item {
+            float: left;
+            width: 25%;
+            padding: 0 5px;
+            cursor: pointer;
+            &.active, &:hover {
+                .wrap-img {
+                    border: 1px solid #9eca00;
+                }
+            }
 
-            img {
-                float: left;
-                width: 25%;
-                padding: 0 5px;
-                cursor: pointer;
+            .wrap-img {
+                width: 100%;
+                border: 1px solid transparent;
+
+                img {
+                    width: 100%;
+                }
             }
         }
     }
