@@ -31,6 +31,7 @@ var isMobile = {
             this.initFormElements();
             this.initMasheadSlider();
             this.initSliderProduct();
+            this.initRemoveProduct();
         },
 
         initFormElements: function() {
@@ -120,6 +121,38 @@ var isMobile = {
                             listThumbs.eq( idx ).addClass('active');
                         });
                 })
+            }
+        },
+
+        initRemoveProduct: function () {
+            if ( $('#table-cart').length ) {
+                var tableContent = $('#table-cart'),
+                    tableFooter = tableContent.find('tfoot'),
+                    removeTags = tableContent.find('.remove-product');
+
+                function getTotalPrice () {
+                    var price = 0;
+
+                    tableContent.find('.remove-product').each(function ( idx, elm ) {
+                        price = price + parseInt( $(elm).data('price'), 10 );
+                    });
+
+                    return price;
+                }
+
+                removeTags.each(function () {
+                    var _this = $(this);
+                        _this.off('click').on('click', function (e) {
+                            e.preventDefault();
+                            _this.parents('tr').remove();
+                            setTimeout(function () {
+                                var price = getTotalPrice();
+                                var string = numeral(price).format('0,0');
+
+                                tableFooter.find('td:last-child').text( string +' VND' );
+                            });
+                        });
+                });
             }
         }
     };
