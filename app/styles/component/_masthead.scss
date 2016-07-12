@@ -8,14 +8,20 @@
     figcaption {
         .text {
             color: #fff;
-            font-size: 41px;
+            font-size: 35px;
             font-weight: bold;
             text-align: center;
             line-height: 1.2em;
             display: block;
+            @include screen( small ) {
+                font-size: 41px;
+            }
         }
         .text--big {
-            font-size: 82px;
+            font-size: 58px;
+            @include screen( small ) {
+                font-size: 82px;
+            }
         }
     }
 }
