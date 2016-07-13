@@ -2,4 +2,45 @@
 ** FOOTER
 */
 
-footer {}
+footer {
+	padding: 15px 0;
+	background-color: #2d3132;
+
+	.copyright {
+		color: #fff;
+		font-size: 12px;
+		float: left;
+		padding: 0;
+		margin: 0;
+		line-height: 25px;
+		@include screen ( small ) {
+			font-size: 14px;
+		}
+	}
+	nav {
+		float: right;
+		ul {
+			list-style: none;
+			padding: 0;
+			margin: 0;
+			li {
+				display: inline-block;
+				vertical-align: middle;
+
+				a {
+					display: block;
+					background-color: #fff;
+					text-align: center;
+					width: 25px;
+					height: 25px;
+					line-height: 25px;
+					@include border-radius( 2px, 2px, 2px, 2px );
+				}
+
+				.fa {
+					color: #2d3132;
+				}
+			}
+		}
+	}
+}

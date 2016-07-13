@@ -32,6 +32,7 @@ var isMobile = {
             this.initMasheadSlider();
             this.initSliderProduct();
             this.initRemoveProduct();
+            this.initToogleMenu();
         },
 
         initFormElements: function() {
@@ -92,6 +93,7 @@ var isMobile = {
                     speed: 500,
                     fade: true,
                     cssEase: 'linear',
+                    dots: true,
                     appendArrows: $('.masthead__arrow > .container'),
                     prevArrow: '<button type="button" class="slick-prev"><i class="fa fa-chevron-left fa-2x" aria-hidden="true"></i></button>',
                     nextArrow: '<button type="button" class="slick-next"><i class="fa fa-chevron-right fa-2x" aria-hidden="true"></i></button>'
@@ -154,11 +156,28 @@ var isMobile = {
                         });
                 });
             }
+        },
+
+        initToogleMenu: function () {
+            var aTag = $('.toggle-menu'),
+                contentMenuMobile = $('.main-nav');
+
+                aTag.off('click').on('click', function (e) {
+                    e.preventDefault();
+
+                    if ( $(this).hasClass('active') ) {
+                        contentMenuMobile.slideUp();
+                        $(this).removeClass('active');
+                    } else {
+                        contentMenuMobile.slideDown();
+                        $(this).addClass('active');
+                    }
+                });
         }
     };
 })(jQuery);
 
 $(document).ready(function() {
-    gbCompany.Global.init();
     $(document).foundation();
+    gbCompany.Global.init();
 });

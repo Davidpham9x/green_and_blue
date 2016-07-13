@@ -3,11 +3,24 @@
 		figcaption {
 			&:before {
 				content: '';
-				background: url( '../images/global/figcaption-leaf.png' ) no-repeat;
-				width: 106px;
+				background: url( '../images/global/figcaption-leaf.png' ) center center no-repeat;
+				background-size: 100% 100%;
+				width: 100%;
 				height: 57px;
-				@include ab( -5%, -8%, n, n );
+				max-width: 60px;
+				margin-left: -30px;
+				@include ab( -60px, 50%, n, n );
+				@include screen(medium) {
+					max-width: 106px;
+					@include ab( -5%, -8%, n, n );
+				}
 			}
+		}
+	}
+	.products {
+		margin-top: 30px;
+		@include screen ( medium ) {
+			margin-top: 0;
 		}
 	}
 }
@@ -61,8 +74,10 @@
 	display: table;
 	position: relative;
 	text-align: center;
+	border-bottom: 1px solid #d2cfcf;
 	@include screen(medium) {
 		text-align: left;
+		border: 0;
 		&:before {
 			content: '';
 			width: 1px;
@@ -116,8 +131,10 @@
 .support__chat {
 	display: table;
 	text-align: center;
+	border-bottom: 1px solid #d2cfcf;
 	@include screen(medium) {
 		text-align: left;
+		border: 0;
 	}
 
 	.inner {
@@ -168,6 +185,10 @@
 		text-align: center;
 		position: relative;
 
+		img {
+			max-width: 980px;
+			margin: 0 auto;
+		}
 		.heading {
 			margin-bottom: 30px;
 			font-weight: bold;
@@ -197,9 +218,12 @@
 		line-height: normal;
 		text-align: justify;
 		margin: 0;
-		padding: 35px 45px;
+		padding: 35px 25px;
 		background: url('../images/icons/icon-quote-text-left.png') no-repeat, url('../images/icons/icon-quote-text-right.png') no-repeat;
 		background-position: left top, right bottom;
+		@include screen ( medium ) {
+			padding: 35px 45px;
+		}
 
 		a {
 			display: block;
@@ -289,19 +313,26 @@
 
 /* Order Now */
 .order-now {
-	background: url('../images/home/bg-order-now.jpg') center top no-repeat;
-	background-size: cover;
-	width: 100%;
-	/* max-width: 1640px;
-	margin: 0 auto; */
-	height: 369px;
-	display: table;
+	background: #fff url('../images/home/bg-order-now-mobile.jpg') center bottom no-repeat;
+	padding: 30px 0 400px;
+	@include screen ( medium ) {
+		background: url('../images/home/bg-order-now.jpg') center top no-repeat;
+		background-size: cover;
+		width: 100%;
+		/* max-width: 1640px;
+		margin: 0 auto; */
+		height: 369px;
+		display: table;
+		padding: 0;
+	}
 
 	.inner {
-		height: 100%;
-		display: table-cell;
-		vertical-align: middle;
 		text-align: center;
+		@include screen ( medium ) {
+			height: 100%;
+			display: table-cell;
+			vertical-align: middle;
+		}
 	}
 	.heading {
 		margin-bottom: 30px;
@@ -309,9 +340,7 @@
 }
 
 /* Form */
-.form {
-
-}
+/* .form {} */
 .form__field {
 	margin-top: 15px;
 	&:first-child {
