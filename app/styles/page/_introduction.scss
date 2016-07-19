@@ -22,6 +22,12 @@
     hr {
         margin-bottom: 0;
     }
+    .order-now {
+        padding: 0 0 400px;
+        @include screen ( medium ) {
+            padding: 0;
+        }
+    }
 }
 
 .editor-output {

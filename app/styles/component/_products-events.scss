@@ -31,12 +31,21 @@
 .product__info,
 .event__info {
     padding: 15px;
+
     span {
         display: block;
         color: #6a6060;
         font-size: 29px;
         font-weight: bold;
         line-height: 1.2em;
+    }
+    .button__wrapper {
+        @include screen ( small ) {
+            margin-top: 10px;
+        }
+        @include screen ( ipad ) {
+            margin-top: 0;
+        }
     }
 }
 

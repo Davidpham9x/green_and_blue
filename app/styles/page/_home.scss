@@ -10,9 +10,14 @@
 				max-width: 60px;
 				margin-left: -30px;
 				@include ab( -60px, 50%, n, n );
-				@include screen(medium) {
+				@include transition(all .3s ease);
+				@include screen ( medium ) {
+					max-width: 80px;
+					@include ab( -10px, 130px, n, n );
+				}
+				@include screen ( ipad ) {
 					max-width: 106px;
-					@include ab( -5%, -8%, n, n );
+					@include ab( -5px, 30px, n, n );
 				}
 			}
 		}
@@ -27,22 +32,27 @@
 
 /* Support */
 .support {
-	@include screen(medium) {
+	@include screen ( medium ) {
 		top: -25px;
 		position: relative;
 	}
 
 	.row {
 		background-color: #fff;
-		@include screen(medium) {
+		@include screen ( medium ) {
 			padding: 6px;
 		}
 	}
 	.title {
-		font-size: 16px;
+		font-size: 14px;
 		color: #6a6060;
 		display: block;
 		line-height: normal;
+		margin-bottom: 10px;
+		@include screen ( ipadPortrait ) {
+			font-size: 16px;
+			margin-bottom: 0;
+		}
 	}
 }
 .support__order-now {
@@ -60,11 +70,15 @@
 		line-height: normal;
 		text-transform: uppercase;
 		padding: 10px 0;
-		@include screen(small) {
+		@include screen ( small ) {
 			font-size: 20px;
 			padding: 25px 5px;
 		}
-		@include screen(medium) {
+		@include screen ( ipadPortrait ) {
+			font-size: 17px;
+			padding: 25px 5px;
+		}
+		@include screen ( ipad ) {
 			font-size: 23px;
 			padding: 45px 5px;
 		}
@@ -83,7 +97,7 @@
 			width: 1px;
 			height: 70%;
 			background-color: #d2cfcf;
-			margin-top: -15%;
+			@include transform( translateY( -50% ) );
 			@include ab( 50%, n, n, 0 );
 		}
 	}
@@ -93,11 +107,15 @@
 		display: table-cell;
 		vertical-align: middle;
 		padding: 10px 0;
+		text-align: center;
 		@include screen(small) {
 			padding: 15px 0;
 		}
 		@include screen (medium) {
 			padding: 0;
+		}
+		@include screen ( ipad ) {
+			text-align: left;
 		}
 	}
 	a {
@@ -108,8 +126,11 @@
 		line-height: normal;
 		margin-top: 10px;
 		display: inline-block;
-		@include screen (small) {
+		@include screen ( small ) {
 			margin-top: 0;
+			font-size: 20px;
+		}
+		@include screen ( ipadPortrait ) {
 			font-size: 30px;
 		}
 		&:before {
@@ -142,11 +163,15 @@
 		display: table-cell;
 		vertical-align: middle;
 		padding: 10px 0;
+		text-align: center;
 		@include screen(small) {
 			padding: 15px 0;
 		}
 		@include screen (medium) {
 			padding: 0;
+		}
+		@include screen ( ipad ) {
+			text-align: left;
 		}
 	}
 	a {
@@ -156,8 +181,11 @@
 		line-height: normal;
 		margin-top: 10px;
 		display: inline-block;
-		@include screen (small) {
+		@include screen ( small ) {
 			margin-top: 0;
+			font-size: 20px;
+		}
+		@include screen ( ipadPortrait ) {
 			font-size: 26px;
 		}
 		&:before {
