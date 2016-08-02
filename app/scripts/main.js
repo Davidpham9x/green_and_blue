@@ -33,6 +33,7 @@ var isMobile = {
             this.initSliderProduct();
             this.initRemoveProduct();
             this.initToogleMenu();
+            this.initHandleWebsiteResize();
         },
 
         initFormElements: function() {
@@ -87,7 +88,7 @@ var isMobile = {
         },
 
         initMasheadSlider: function() {
-            if ( $('.masthead__banner').length && $('.masthead__banner').children().length > 2 ) {
+            if ($('.masthead__banner').length && $('.masthead__banner').children().length > 2) {
                 $('.masthead__banner').slick({
                     infinite: true,
                     speed: 500,
@@ -101,8 +102,8 @@ var isMobile = {
             }
         },
 
-        initSliderProduct: function () {
-            if ( $('#slider-product').length ) {
+        initSliderProduct: function() {
+            if ($('#slider-product').length) {
                 var sliderContent = $('#slider-product > .product__img--big'),
                     listThumbs = $('#slider-product').find('.product__img--list').children();
 
@@ -114,65 +115,96 @@ var isMobile = {
                     cssEase: 'linear'
                 });
 
-                listThumbs.each(function ( idx, elm ) {
+                listThumbs.each(function(idx, elm) {
                     var _this = $(this);
 
-                        _this.off('click').on('click', function () {
-                            sliderContent.slick( 'slickGoTo', idx );
-                            listThumbs.removeClass('active');
-                            listThumbs.eq( idx ).addClass('active');
-                        });
+                    _this.off('click').on('click', function() {
+                        sliderContent.slick('slickGoTo', idx);
+                        listThumbs.removeClass('active');
+                        listThumbs.eq(idx).addClass('active');
+                    });
                 })
             }
         },
 
-        initRemoveProduct: function () {
-            if ( $('#table-cart').length ) {
+        initSliderService: function() {
+            if ($('.list-service').length) {
+                var sliderContent = $('.list-service > .columns'),
+                    listThumbs = $('.list-service').find('.item').children();
+
+                sliderContent.slick({
+                    infinite: true,
+                    speed: 500,
+                    fade: false,
+                    arrows: false,
+                    dots: true,
+                    cssEase: 'linear',
+                    slidesToShow: 2
+                });
+            }
+        },
+
+        initRemoveProduct: function() {
+            if ($('#table-cart').length) {
                 var tableContent = $('#table-cart'),
                     tableFooter = tableContent.find('tfoot'),
                     removeTags = tableContent.find('.remove-product');
 
-                function getTotalPrice () {
+                function getTotalPrice() {
                     var price = 0;
 
-                    tableContent.find('.remove-product').each(function ( idx, elm ) {
-                        price = price + parseInt( $(elm).data('price'), 10 );
+                    tableContent.find('.remove-product').each(function(idx, elm) {
+                        price = price + parseInt($(elm).data('price'), 10);
                     });
 
                     return price;
                 }
 
-                removeTags.each(function () {
+                removeTags.each(function() {
                     var _this = $(this);
-                        _this.off('click').on('click', function (e) {
-                            e.preventDefault();
-                            _this.parents('tr').remove();
-                            setTimeout(function () {
-                                var price = getTotalPrice();
-                                var string = numeral(price).format('0,0');
+                    _this.off('click').on('click', function(e) {
+                        e.preventDefault();
+                        _this.parents('tr').remove();
+                        setTimeout(function() {
+                            var price = getTotalPrice();
+                            var string = numeral(price).format('0,0');
 
-                                tableFooter.find('td:last-child').text( string +' VND' );
-                            });
+                            tableFooter.find('td:last-child').text(string + ' VND');
                         });
+                    });
                 });
             }
         },
 
-        initToogleMenu: function () {
+        initToogleMenu: function() {
             var aTag = $('.toggle-menu'),
                 contentMenuMobile = $('.main-nav');
 
-                aTag.off('click').on('click', function (e) {
-                    e.preventDefault();
+            aTag.off('click').on('click', function(e) {
+                e.preventDefault();
 
-                    if ( $(this).hasClass('active') ) {
-                        contentMenuMobile.slideUp();
-                        $(this).removeClass('active');
-                    } else {
-                        contentMenuMobile.slideDown();
-                        $(this).addClass('active');
-                    }
-                });
+                if ($(this).hasClass('active')) {
+                    contentMenuMobile.slideUp();
+                    $(this).removeClass('active');
+                } else {
+                    contentMenuMobile.slideDown();
+                    $(this).addClass('active');
+                }
+            });
+        },
+
+        initHandleWebsiteResize: function() {
+            window.windowWidth = 0;
+
+            $(window).resize(function() {
+                window.windowWidth = $(window).width();
+
+                if (window.windowWidth <= 640) {
+                    gbCompany.Global.initSliderService();
+                } else {
+                    $('.list-service > .columns').slick('unslick');
+                }
+            }).trigger('resize');
         }
     };
 })(jQuery);

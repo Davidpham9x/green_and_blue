@@ -33,19 +33,28 @@
     padding: 15px;
 
     span {
-        display: block;
+        /* display: block; */
         color: #6a6060;
         font-size: 29px;
         font-weight: bold;
         line-height: 1.2em;
+        display: inline-block;
+
+        @include screen ( medium ) {
+            display: block;
+        }
     }
     .button__wrapper {
-        @include screen ( small ) {
+        float: right;
+        /* @include screen ( small ) {
             margin-top: 10px;
+        } */
+        @include screen ( medium ) {
+            float: none;
         }
-        @include screen ( ipad ) {
+        /* @include screen ( ipad ) {
             margin-top: 0;
-        }
+        } */
     }
 }
 
@@ -59,10 +68,16 @@
     line-height: normal;
     display: block;
     margin: 5px 0 15px;
+
     ul {
         padding-left: 20px;
     }
 }
 
+/* .product__prize {
+    display: inline-block;
 
-/* .product__prize {} */
+    @include screen ( medium ) {
+        display: block;
+    }
+} */

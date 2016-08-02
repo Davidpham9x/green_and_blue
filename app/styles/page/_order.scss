@@ -7,17 +7,23 @@
         background-color: #fff;
     }
     .heading__wrapper {
-        margin: 20px 0;
+        margin: 0 0 30px;
         @include screen ( medium ) {
-            margin: 80px 0 40px;
+            margin: 0 0 40px;
         }
     }
     /* Step Order */
     .step-order {
-        .list-step {
-            margin-bottom: 25px;
+        .heading__wrapper {
+            margin: 20px 0;
             @include screen ( medium ) {
-                margin-bottom: 45px;
+                margin: 80px 0 40px;
+            }
+        }
+        .list-step {
+            margin-bottom: 20px;
+            @include screen ( medium ) {
+                margin-bottom: 30px;
             }
             .inner {
                 margin: 0 auto;
@@ -44,6 +50,9 @@
                 &:first-child {
                     margin-top: 0;
                 }
+                @include screen ( medium ) {
+                    margin-top: 0;
+                }
             }
         }
     }
@@ -62,12 +71,12 @@
     }
     /* Support */
     .form-order {
-        margin-bottom: 45px;
+        margin-bottom: 30px;
     }
 }
 /* Service */
 .service {
-    margin-bottom: 45px;
+    margin-bottom: 30px;
     .list-service {
         .item {
             width: 20%;
@@ -76,7 +85,7 @@
             &:first-child {
                 .inner {
                     span {
-                        margin-top: 26px;
+                        margin-top: 25px;
                     }
                 }
             }
@@ -84,12 +93,55 @@
         .inner {
             text-align: center;
 
+            img {
+                margin: 0 auto;
+            }
             span {
                 display: block;
-                text-transform: uppercase;
+                margin-top: 10px;
                 font-size: 18px;
-                margin-top: 8px;
                 line-height: normal;
+                text-transform: uppercase;
+
+                br {
+                    display: none;
+                    @include screen ( medium ) {
+                        display: block;
+                    }
+                }
+            }
+        }
+        .slick-dots {
+            font-size: 0;
+            line-height: 0;
+            margin: 0;
+            width: 100%;
+            text-align: center;
+
+            li {
+                display: inline-block;
+                vertical-align: middle;
+                padding: 0 5px;
+                font-size: 0;
+                line-height: 0;
+                &.slick-active {
+                    button {
+                        border-color: #86bc42;
+                    }
+                }
+
+                button {
+                    background: transparent;
+                    text-indent: -9999px;
+                    border: none;
+                    padding: 0;
+                    font-size: 0;
+                    border: 6px solid #6a6060;
+                    width: 0;
+                    height: 0;
+                    cursor: pointer;
+                    @include border-radius ( 50%, 50%, 50%, 50% );
+                }
             }
         }
     }
