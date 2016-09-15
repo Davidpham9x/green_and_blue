@@ -88,7 +88,7 @@ var isMobile = {
         },
 
         initMasheadSlider: function() {
-            if ($('.masthead__banner').length && $('.masthead__banner').children().length > 2) {
+            if ( $('.masthead__banner').length && $('.masthead__banner').children().length > 1 ) {
                 $('.masthead__banner').slick({
                     infinite: true,
                     speed: 500,

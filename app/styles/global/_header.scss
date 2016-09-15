@@ -4,11 +4,13 @@
 
 header {
     .logo {
-        width: 100%;
-        max-width: 80px;
-        background-color: #fff;
         z-index: 2;
+        width: 100%;
+        /* max-width: 80px;
+        margin-left: -40px; */
+        max-width: 80px;
         margin-left: -40px;
+        background-color: #fff;
         @include ab( 0, 50%, n, n);
         @include box-shadow( 0px, 0px, 13px, rgba(0, 0, 0, 0.14) );
         @include transition(all .3s ease);
@@ -16,48 +18,54 @@ header {
         @include screen ( medium ) {
             display: block;
         }
-        @include screen ( ipadPortrait ) {
+        /* @include screen ( ipadPortrait ) {
             max-width: 120px;
             margin-left: -60px;
-        }
-        @include screen ( large ) {
+        } */
+        @include screen ( ipadPortrait ) {
             max-width: 140px;
             margin-left: -70px;
         }
+
         a {
             display: block;
             text-indent: -9999px;
             border-top: 6px solid #cccccc;
-            text-align: center;
+
             padding: 15px;
+            text-align: center;
             position: relative;
             &:before {
                 content: '';
                 background: url('../images/global/bg-bottom-logo.png') center center no-repeat;
                 background-size: 100% 100%;
                 width: 100%;
+                /* height: 25px;
                 max-width: 100px;
-                height: 25px;
+                margin-left: -40px; */
+                height: 37px;
+                max-width: 80px;
                 margin-left: -40px;
                 @include ab( n, 50%, -25px, n );
                 @include transition(all .3s ease);
-                @include screen ( ipadPortrait ) {
-                    max-width: 120px;
+                /* @include screen ( ipadPortrait ) {
                     height: 37px;
+                    max-width: 120px;
                     margin-left: -60px;
-                }
-                @include screen ( large ) {
+                } */
+                @include screen ( ipadPortrait ) {
                     max-width: 140px;
                     height: 44px;
                     margin-left: -70px;
                     bottom: -36px;
                 }
             }
+
             img {
                 width: 100%;
-                max-width: 320px;
-                margin: 0 auto;
                 display: block;
+                margin: 0 auto;
+                max-width: 320px;
             }
         }
     }
@@ -70,6 +78,7 @@ header {
     @include screen(ipad) {
         padding: 0;
     }
+
     a {
         color: #fff;
         font-size: 12px;
@@ -81,9 +90,10 @@ header {
         &.toggle-menu {
             float: left;
         }
+
         i {
+            font-size: 16px;
             padding-right: 10px;
-            vertical-align: middle;
         }
     }
 }
@@ -93,8 +103,13 @@ header {
     @include screen(medium) {
         display: block;
     }
+
     .container {
-        padding: 10px;
+        padding: 10px 5px;
+        position: inherit;
+        @include screen ( medium ) {
+            padding: 10px;
+        }
         @include screen ( ipad ) {
             padding: 0;
         }
@@ -111,6 +126,7 @@ header {
         @include screen(medium) {
             float: right;
         }
+
         li {
             display: block;
             position: relative;
@@ -163,21 +179,21 @@ header {
                         background-color: #9eca00;
                         @include ab ( n, 0, -10px, n );
                         @include screen ( small ) {
-                            bottom: 1px;
+                            bottom: 0;
                         }
                         @include screen ( ipadPortrait ) {
-                            bottom: 11px;
+                            bottom: 16px;
                         }
-                        @include screen ( large ) {
+                        @include screen ( ipad ) {
                             bottom: 31px;
                         }
                     }
                 }
                 @include transition(all .3s ease);
                 @include screen ( small ) {
-                    font-size: 12px;
-                    line-height: 43px;
                     padding: 0;
+                    font-size: 12px;
+                    line-height: 20px;
                 }
                 @include screen ( ipadPortrait ) {
                     font-size: 13px;

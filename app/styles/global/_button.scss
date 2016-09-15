@@ -3,19 +3,19 @@
 ** Please use btn- as your CSS class prefix
 */
 .button {
-    border: none;
-    display: inline-block;
-    text-decoration: none;
-    color: #fff;
-    font-size: 14px;
-    font-weight: bold;
-    line-height: 37px;
-    text-transform: uppercase;
-    background-color: #86bc42;
-    padding: 0 25px;
+    border: none!important;
+    display: inline-block!important;
+    text-decoration: none!important;
+    color: #fff!important;
+    font-size: 14px!important;
+    font-weight: bold!important;
+    line-height: 37px!important;
+    text-transform: uppercase!important;
+    background-color: #86bc42!important;
+    padding: 0 25px!important;
     @include border-radius( 3px, 3px, 3px, 3px );
     &:hover {
-    	background-color: lighten( #86bc42, 10% );
+    	background-color: lighten( #86bc42, 10% )!important;
     }
 }
 .button--full {

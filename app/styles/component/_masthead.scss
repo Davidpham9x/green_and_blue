@@ -32,11 +32,11 @@
     }
 
     .slick-dots {
+        width: 100%;
         font-size: 0;
         line-height: 0;
-        width: 100%;
         text-align: center;
-        @include ab( n, 0, 0, n );
+        @include ab( n, 0, 30px, n );
         @include screen(medium) {
             display: none!important;
         }
