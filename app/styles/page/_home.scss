@@ -245,8 +245,11 @@
 		font-size: 14px;
 		line-height: normal;
 		text-align: justify;
+
 		margin: 0;
 		padding: 35px 25px;
+		position: relative;
+
 		background: url('../images/icons/icon-quote-text-left.png') no-repeat, url('../images/icons/icon-quote-text-right.png') no-repeat;
 		background-position: left top, right bottom;
 		@include screen ( medium ) {
@@ -254,13 +257,18 @@
 		}
 
 		a {
-			display: block;
-			float: right;
 			color: #9eca00;
 			font-size: 12px;
+			@include ab ( n, n, 35px, 25px );
+			@include screen ( medium ) {
+				@include ab ( n, n, 35px, 45px );
+			}
 			&:hover {
 				text-decoration: underline;
 			}
+		}
+		.expand {
+			display: none;
 		}
 	}
 }
@@ -360,6 +368,9 @@
 	}
 	.heading {
 		margin-bottom: 30px;
+	}
+	.button__wrapper {
+		text-align: center;
 	}
 }
 

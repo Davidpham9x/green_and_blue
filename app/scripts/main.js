@@ -34,6 +34,18 @@ var isMobile = {
             this.initRemoveProduct();
             this.initToogleMenu();
             this.initHandleWebsiteResize();
+
+            $('.expand-content').click(function (e) {
+                e.preventDefault();
+
+                if ( $(this).hasClass('active') ) {
+                    $('.expand').slideUp('normal');
+                    $(this).removeClass('active');
+                } else {
+                    $('.expand').slideDown('normal');
+                    $(this).addClass('active');
+                }
+            });
         },
 
         initFormElements: function() {

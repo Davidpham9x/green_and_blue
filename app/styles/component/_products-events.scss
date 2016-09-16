@@ -22,6 +22,9 @@
         a {
             display: block;
         }
+        >.product__info {
+            padding-top: 0;
+        }
     }
 }
 
@@ -49,19 +52,18 @@
         }
     }
     .button__wrapper {
-        float: right;
+        /* float: right; */
         /* @include screen ( small ) {
             margin-top: 10px;
         } */
-        @include screen ( medium ) {
+        /* @include screen ( medium ) {
             float: none;
-        }
+        } */
         /* @include screen ( ipad ) {
             margin-top: 0;
         } */
     }
 }
-
 
 /* .product__name {} */
 
